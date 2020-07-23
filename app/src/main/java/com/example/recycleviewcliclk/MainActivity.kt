@@ -37,13 +37,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {               /// <--для того чтобы menux xml появилось в main activity
         menuInflater.inflate(R.menu.menu_main, menu)
-        adapter1.add(Dataclass(1,"Emodji","About emodji"))
+        adapter.add(DataClass(1,"Emodji","About emodji"))
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.menuMain->adapter1.add(Dataclass(1,"hello1","hello2"))
+            R.id.menuMain->adapter.add(DataClass(1,"hello1","hello2"))
         }
         return super.onOptionsItemSelected(item)
     }
@@ -51,14 +51,14 @@ class MainActivity : AppCompatActivity() {
     private fun Listener() {
         btnDelete?.setOnClickListener {
             !etMain?.text.isNullOrEmpty()
-            adapter1.remove(etMain?.text.toString().toInt())
+            adapter.delete(etMain?.text.toString().toInt())
         }
     }
 
-    private fun getDAta(): ArrayList<Dataclass>  {
-        val list = arrayListOf<Dataclass>()
+    private fun getDAta(): ArrayList<DataClass>  {
+        val list = arrayListOf<DataClass>()
         for (i in 1..500){
-            list.add(Dataclass(R.drawable.ic_launcher_background,"Go $i","0$i"))
+            list.add(DataClass(R.drawable.ic_launcher_background,"Go $i","0$i"))
         }
         return list
     }
