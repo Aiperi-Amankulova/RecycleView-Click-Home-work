@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RecycleView cliclk</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="emodji">Emodji</string>
+    <string name="about_emodji">about emodji</string>
 </resources>
